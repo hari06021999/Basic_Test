@@ -10,11 +10,11 @@ node {
                 sh 'ceedling test:all'
             }
         }
-        // stage('Coverage Test') {
-        //     dir("2W_Test") {
-        //         sh 'ceedling gcov:all'
-        //     }
-        // }
+        stage('Coverage Test') {
+            dir("2W_Test") {
+                sh 'ceedling gcov:all'
+            }
+        }
         stage('Coverage XML Generate') {
             dir("2W_Test") {
                 sh 'ceedling utils:gcov'
