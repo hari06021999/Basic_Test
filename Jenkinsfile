@@ -13,16 +13,10 @@ node {
                 sh 'ceedling test:all'
                 sh 'ceedling gcov:all'
                 sh 'ceedling utils:gcov'
-                sh 'cat build/artifacts/gcov/GcovCoverageResults.xml'
+                // sh 'cat build/artifacts/gcov/GcovCoverageResults.xml'
             }
         }
-    } catch (e) {
-        throw e
-    } finally {
-        stage('Generating Coverage') {
-            cobertura coberturaReportFile: 'test_suite/build/artifacts/gcov/GcovCoverageResults.xml'
-        }
-    }
+    } 
 }
 
 // pipeline {
