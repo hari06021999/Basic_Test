@@ -32,11 +32,11 @@
 :paths:
   :test:
     - +:test/**
-    - -:test
+    - -:test/support
   :source:
     - src/**
   :support:
-    - test
+    - test/support
   :libraries: []
 
 :defines:
@@ -98,5 +98,5 @@
   :enabled:
     - stdout_pretty_tests_report
     - module_generator
-    - gcov
+    
 ...
