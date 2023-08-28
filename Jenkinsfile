@@ -17,6 +17,7 @@ node {
         }
         stage('Coverage XML Generate') {
             dir("2W_Test") {
+                 sh '--coverage -g -O0'
                  sh 'gcovr --html-details coverage.html'
               
             }
