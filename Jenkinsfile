@@ -17,7 +17,7 @@ node {
         }
         stage('Coverage XML Generate') {
             dir("2W_Test") {
-                 sh 'ceedling utils:gcovr'
+                 sh 'ceedling utils:gcov'
               
             }
         }
