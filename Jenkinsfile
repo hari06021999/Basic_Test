@@ -11,9 +11,9 @@ node {
         stage('Unit Test') {
             dir("2W_Test") {
                 sh 'ceedling test:all'
-                sh 'ceedling gcov:all'
-                sh 'ceedling utils:gcov'
-                sh 'cat build/artifacts/gcov/GcovCoverageResults.xml'
+                // sh 'ceedling gcov:all'
+                // sh 'ceedling utils:gcov'
+                // sh 'cat build/artifacts/gcov/GcovCoverageResults.xml'
             }
         }
     } catch (e) {
