@@ -17,8 +17,7 @@ node {
         }
         stage('Coverage XML Generate') {
             dir("2W_Test") {
-                 sh 'gcov'
-                 // sh 'gcovr --html-details coverage.html'
+                sh 'ceedling utils:gcov'
               
             }
         }
@@ -32,7 +31,7 @@ node {
             subject: "Test Email From Jenkins",
             body: "Hey Buddy you got mail! <br>  BUILD STATUS: ${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}",
             attachLog: true
-            // attachmentsPattern: "2W_Test/coverage.html",compressLog: true
+            attachmentsPattern: "2W_Test/build/artifacts/gcov/*.html",compressLog: true
     }
 }
 
