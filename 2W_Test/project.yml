@@ -72,8 +72,8 @@
   :reports:
     - HtmlDetailed
   :gcovr:
-    :html_medium_threshold: 75
-    :html_high_threshold: 90
+    :--html_medium_threshold: 75
+    :--html_high_threshold: 90
 
 #:tools:
 # Ceedling defaults to using gcc for compiling, linking, etc.
