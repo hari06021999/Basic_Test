@@ -32,11 +32,11 @@
 :paths:
   :test:
     - +:test/**
-    - -:test/support
+    - -:test
   :source:
     - src/**
   :support:
-    - test/support
+    - test
   :libraries: []
 
 :defines:
