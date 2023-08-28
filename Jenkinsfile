@@ -16,7 +16,10 @@ node {
                 // sh 'cat build/artifacts/gcov/GcovCoverageResults.xml'
             }
         }
-    } 
+    }
+    catch (e) {
+        throw e
+    }
 }
 
 // pipeline {
