@@ -18,7 +18,7 @@ node {
         stage('Coverage XML Generate') {
             dir("2W_Test") {
                 sh 'ceedling utils:gcov'
-                sh 'cat build/artifacts/gcov/GcovCoverageResults.xml'
+                sh 'cat /var/lib/jenkins/workspace/CAN_TEST/2W_Test/build/artifacts/gcov/GcovCoverageResults.xml'
               
             }
         }
