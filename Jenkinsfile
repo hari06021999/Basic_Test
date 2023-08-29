@@ -18,8 +18,14 @@ node {
         stage('Coverage XML Generate') {
             dir("2W_Test") {
                 sh 'ceedling utils:gcov'
+                sh 'cat build/artifacts/gcov/GcovCoverageResults.xml'
               
             }
+        }
+         stage('Generating Coverage') {
+             dir("2W_Test") {
+            cobertura coberturaReportFile: '2W_Test/build/artifacts/gcov/GcovCoverageResults.xml'
+             }
         }
     }
    
