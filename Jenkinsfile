@@ -28,6 +28,7 @@ node {
             steps {
         sh ' mkdir -p ~/build/artifacts/gcov'
         }
+         }
         
         stage('Coverage XML Generate') {
             dir("2W_Test") {
