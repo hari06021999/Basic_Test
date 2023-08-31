@@ -26,7 +26,7 @@ node {
 
          stage('Make Directry') {
             steps {
-        sh ' mkdir -p ~/build/artifacts/gcov'
+        sh ' mkdir -p Backup'
         }
          }
         
