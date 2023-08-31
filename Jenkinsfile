@@ -2,13 +2,13 @@ node {
     try {
         checkout scm
 
-            stage('Delete Dir') {
-        steps {
-            dir ('build/artifacts/gcov') {
-                deleteDir()
-            }
-        }
-       }
+       //      stage('Delete Dir') {
+       //  steps {
+       //      dir ('build/artifacts/gcov') {
+       //          deleteDir()
+       //      }
+       //  }
+       // }
         stage('Preparation') {
            sh 'ceedling clean'
         }
