@@ -2,13 +2,6 @@ node {
     try {
         checkout scm
 
-       //      stage('Delete Dir') {
-       //  steps {
-       //      dir ('build/artifacts/gcov') {
-       //          deleteDir()
-       //      }
-       //  }
-       // }
         stage('Preparation') {
            sh 'ceedling clean'
         }
@@ -16,27 +9,23 @@ node {
         stage('Unit Test') {
             dir("2W_Test") {
                 sh 'ceedling test:all'
+                 sh 'ceedling gcov:all'
+                 sh 'ceedling utils:gcov'
             }
         }
-        stage('Coverage Test') {
-            dir("2W_Test") {
-                sh 'ceedling gcov:all'
-            }
-        }
-
-        //  stage('Make Directry') {
-        //     steps {
-        // sh ' mkdir -p Backup'
+        // stage('Coverage Test') {
+        //     dir("2W_Test") {
+        //         sh 'ceedling gcov:all'
+        //     }
         // }
-        //  }
         
-        stage('Coverage XML Generate') {
-            dir("2W_Test") {
-                sh 'ceedling utils:gcov'
-                sh 'cat /var/lib/jenkins/workspace/CAN_TEST/2W_Test/build/artifacts/gcov/GcovCoverageResults.html'
+        // stage('Coverage XML Generate') {
+        //     dir("2W_Test") {
+        //         sh 'ceedling utils:gcov'
+        //         sh 'cat /var/lib/jenkins/workspace/CAN_TEST/2W_Test/build/artifacts/gcov/GcovCoverageResults.html'
               
-            }
-        }
+        //     }
+        // }
         
     }
    
