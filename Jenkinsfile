@@ -1,6 +1,14 @@
 node {
     try {
         checkout scm
+
+            stage('Delete Dir') {
+        steps {
+            dir ('build/artifacts/gcov') {
+                deleteDir()
+            }
+        }
+       }
         stage('Preparation') {
            sh 'ceedling clean'
         }
@@ -15,6 +23,12 @@ node {
                 sh 'ceedling gcov:all'
             }
         }
+
+         stage('Make Directry') {
+            steps {
+        sh ' mkdir -p ~/build/artifacts/gcov'
+        }
+        
         stage('Coverage XML Generate') {
             dir("2W_Test") {
                 sh 'ceedling utils:gcov'
