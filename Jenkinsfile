@@ -24,11 +24,11 @@ node {
             }
         }
 
-         stage('Make Directry') {
-            steps {
-        sh ' mkdir -p Backup'
-        }
-         }
+        //  stage('Make Directry') {
+        //     steps {
+        // sh ' mkdir -p Backup'
+        // }
+        //  }
         
         stage('Coverage XML Generate') {
             dir("2W_Test") {
