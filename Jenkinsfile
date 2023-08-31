@@ -37,11 +37,7 @@ node {
               
             }
         }
-         stage('Generating Coverage') {
-             dir("2W_Test") {
-            cobertura coberturaReportFile: '2W_Test/build/artifacts/gcov/GcovCoverageResults.html'
-             }
-        }
+        
     }
    
     catch (e) {
