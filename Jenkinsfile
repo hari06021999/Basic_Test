@@ -33,7 +33,7 @@ node {
         stage('Coverage XML Generate') {
             dir("2W_Test") {
                 sh 'ceedling utils:gcov'
-                sh 'cat /var/lib/jenkins/workspace/CAN_TEST/2W_Test/build/artifacts/gcov/GcovCoverageResults.html'
+                // sh 'cat /var/lib/jenkins/workspace/CAN_TEST/2W_Test/build/artifacts/gcov/GcovCoverageResults.html'
               
             }
         }
